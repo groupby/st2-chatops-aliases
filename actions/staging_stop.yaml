@@ -17,4 +17,4 @@ parameters:
     description: "Command to run"
     type: string
     immutable: true
-    default: "~/workspace/devops/cluster-manager/ansible/runAnsible.sh ~/workspace/devops/cluster-manager/ansible/staging_stop_all.yaml groupby-development"
+    default: "~/workspace/devops/cluster-manager/ansible/runAnsible.sh ~/workspace/devops/cluster-manager/ansible/staging_stop_all.yml groupby-development"

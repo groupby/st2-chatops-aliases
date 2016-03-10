@@ -2,8 +2,8 @@
 # allows to run ChatOps command: `service restart "nginx" on "web"`
 # eq: `/opt/stackstorm/virtualenvs/ansible/bin/ansible web --become --module-name=service --args='name=nginx state=restarted'`
 ---
-name: chatops.ansible_staging_start
-action_ref: st2-chatops-aliases.staging_start
-description: Start all machines in staging
+name: chatops.ansible_staging_stop
+action_ref: st2-chatops-aliases.staging_stop
+description: Stop all machines in staging
 formats:
   - "staging stop"

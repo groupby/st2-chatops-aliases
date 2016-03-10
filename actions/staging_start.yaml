@@ -1,0 +1,20 @@
+# Make sure you have ansible inventory file `/etc/ansible/hosts` configured
+---
+name: staging_start
+description: Start all machines in staging environment
+runner_type: local-shell-cmd
+entry_point: ""
+enabled: true
+parameters:
+  sudo:
+    description: "Run command with sudo"
+    type: boolean
+    immutable: true
+    default: true
+  kwarg_op:
+    immutable: true
+  cmd:
+    description: "Command to run"
+    type: string
+    immutable: true
+    default: "/home/groupby/workspace/devops/cluster-manager/ansible/runAnsible.sh /home/groupby/workspace/devops/cluster-manager/ansible/staging_start_all.yaml groupby-development'"

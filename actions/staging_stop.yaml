@@ -10,7 +10,7 @@ parameters:
     description: "Run command with sudo"
     type: boolean
     immutable: true
-    default: true
+    default: false
   kwarg_op:
     immutable: true
   timeout:

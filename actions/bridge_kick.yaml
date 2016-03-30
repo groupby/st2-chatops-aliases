@@ -1,0 +1,31 @@
+# Make sure you have ansible inventory file `/etc/ansible/hosts` configured
+---
+name: bridge_kick 
+description: Kick bridge
+runner_type: local-shell-cmd
+entry_point: ""
+enabled: true
+parameters:
+  sudo:
+    description: "Run command with sudo"
+    type: boolean
+    immutable: true
+    default: false
+  kwarg_op:
+    immutable: true
+  timeout:
+    default: 6000
+  cmd:
+    description: "Command to run"
+    type: string
+    immutable: true
+    default: "{% if grove in ('qa', 'stage') %} {% set project = 'groupby-development' %} {% else %} {% set project = 'groupby-cloud-1701' %} {% endif %} ~/workspace/devops/cluster-manager/ansible/runAnsible.sh ~/workspace/devops/cluster-manager/ansible/bridge_kick.yml {{project}} grove={{grove}}"
+  grove:
+    description: "Grove ID"
+    type: string
+    required: true
+  project:
+    description: "GCE project ID"
+    type: string
+    required: true
+    default: "groupby-development"

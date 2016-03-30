@@ -2,8 +2,8 @@
 # allows to run ChatOps command: `service restart "nginx" on "web"`
 # eq: `/opt/stackstorm/virtualenvs/ansible/bin/ansible web --become --module-name=service --args='name=nginx state=restarted'`
 ---
-name: chatops.groupby_staging_start
-action_ref: groupby-chatops.staging_start
-description: Start all machines in staging
+name: chatops.groupby_bridge_kick
+action_ref: groupby-chatops.bridge_kick
+description: Kick bridge
 formats:
-  - "staging start"
+  - "bridge kick on grove {{grove}}"
